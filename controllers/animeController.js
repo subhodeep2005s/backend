@@ -39,6 +39,15 @@ const updateAnime = async (req, res) => {
     res.status(400).json({ message: error.message });
   }
 };
+// Check app status
+const checkAppStatus = async (req, res) => {
+  try {
+    res.send('Hello, your app is working');
+  } catch (error) {
+    res.json({ message: 'An error occurred' });
+  }
+};
+
 
 // Delete an anime
 const deleteAnime = async (req, res) => {
@@ -70,6 +79,7 @@ module.exports = {
   addAnime,
   updateAnime,
   getAnimeById,
-  deleteAnime
+  deleteAnime,
+  checkAppStatus
 };
 
